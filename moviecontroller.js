@@ -4,7 +4,6 @@ const moviesS = require("./movieservice")
 
 async function fetch_movies_title_poster(){
 
-    const movies=await fetch_movies()
 
     const titlesAndPosters = [];
     for (const movie of movies) {
@@ -15,9 +14,7 @@ async function fetch_movies_title_poster(){
     }
 
     return titlesAndPosters;
-
 }
 
 
 module.exports = { fetch_movies_title_poster};
-module.exports = { fetch_movies };

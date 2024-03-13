@@ -11,17 +11,19 @@ const options = {
 };
 
 
-async function fetch_movies() {
-
+async function fetchMovieList() {
     const url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc';
 
     const response = await fetch(url, options);
     const json = await response.json();
     return json;
-
-
-
 }
 
-const moviesData = fetch_movies();
-console.log(moviesData); // This will be the parsed JSON data of movie information.
+// const main = async () => {
+//     const moviesData = await fetch_movies();
+//     console.log(moviesData); // This will be the parsed JSON data of movie information.
+// };
+//
+// main();
+
+module.exports = {fetchMovieList};
